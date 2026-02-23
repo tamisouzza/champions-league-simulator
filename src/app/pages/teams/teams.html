@@ -1,5 +1,11 @@
-<h2>Teams</h2>
+<div class="container">
+  <h2>Teams</h2>
 
-<div *ngFor="let team of teams">
-<app-team-card [team]="team"></app-team-card>
+  <div class="cards">
+    <app-team-card
+      *ngFor="let team of teams"
+      [team]="team"
+      (simulate)="handleSimulate($event)">
+    </app-team-card>
+  </div>
 </div>

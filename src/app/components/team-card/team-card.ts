@@ -1,6 +1,6 @@
-import { Component, Input} from '@angular/core';
-import { Team } from '../../models/team.model';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Team } from '../../models/team.model';
 
 @Component({
   selector: 'app-team-card',
@@ -10,7 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './team-card.scss',
 })
 export class TeamCard {
+  @Input() team!: Team;
 
-  @Input()
-  team!: Team;
+  @Output() simulate = new EventEmitter<Team>();
+
+  onSimulate() {
+    this.simulate.emit(this.team);
+  }
 }
