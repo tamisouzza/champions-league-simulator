@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Team } from '../../models/team.model';
 import { TeamCard } from "../../components/team-card/team-card";
+import { SimulatorService } from '../../services/simulator';
+import { Match } from '../../models/match.model';
 
 @Component({
   selector: 'app-teams',
@@ -14,8 +16,13 @@ export class Teams {
   handleSimulate(team: Team) {
   team.rating += 1;
 }
+matches: Match[] = [];
+lastMatch?: Match;
+
+constructor(private simulator: SimulatorService) {}
   teams: Team[] = [
     { id: 1, name: 'Real Madrid', country:'Spain', rating: 95},
     {id: 2, name: 'Bayern', country: 'Germany', rating: 92 },
   ]
+  
 }

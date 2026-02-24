@@ -7,5 +7,14 @@
       [team]="team"
       (simulate)="handleSimulate($event)">
     </app-team-card>
+    <div *ngIf="lastMatch" class="last-match">
+  <h3>Último Jogo</h3>
+  <p>
+    {{ lastMatch.homeTeamId }} 
+    {{ lastMatch.homeGoals }} x 
+    {{ lastMatch.awayGoals }} 
+    {{ lastMatch.awayTeamId }}
+  </p>
+</div>
   </div>
 </div>
