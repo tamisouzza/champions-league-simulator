@@ -9,12 +9,31 @@
     </app-team-card>
     <div *ngIf="lastMatch" class="last-match">
   <h3>Último Jogo</h3>
-  <p>
-    {{ lastMatch.homeTeamId }} 
-    {{ lastMatch.homeGoals }} x 
-    {{ lastMatch.awayGoals }} 
-    {{ lastMatch.awayTeamId }}
-  </p>
+  <div *ngIf="lastMatch" class="last-match">
+  <div class="last-match__title">Último jogo</div>
+
+  <div class="scoreboard">
+    <div class="team">
+      <div class="team__name">{{ getTeamName(lastMatch.homeTeamId) }}</div>
+      <div class="team__meta">Mandante</div>
+    </div>
+
+    <div class="score">
+      <span class="score__num">{{ lastMatch.homeGoals }}</span>
+      <span class="score__sep">x</span>
+      <span class="score__num">{{ lastMatch.awayGoals }}</span>
+    </div>
+
+    <div class="team team--right">
+      <div class="team__name">{{ getTeamName(lastMatch.awayTeamId) }}</div>
+      <div class="team__meta">Visitante</div>
+    </div>
+  </div>
+
+  <div class="last-match__footer">
+    <span class="muted">Simulated now</span>
+  </div>
+</div>
 </div>
   </div>
 </div>

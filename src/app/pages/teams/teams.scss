@@ -14,3 +14,74 @@
   background-color: #0f172a;
   border-radius: 8px;
 }
+.last-match {
+  margin-top: 28px;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(17, 28, 46, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.last-match__title {
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 14px;
+  opacity: 0.9;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.team__name {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.team__meta {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.team--right {
+  text-align: right;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background: rgba(2, 6, 23, 0.6);
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.18);
+}
+
+.score__num {
+  font-weight: 900;
+  font-size: 22px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.score__sep {
+  opacity: 0.7;
+  font-weight: 700;
+}
+
+.last-match__footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.muted {
+  font-size: 12px;
+  opacity: 0.65;
+}
