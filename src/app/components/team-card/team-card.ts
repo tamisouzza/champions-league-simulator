@@ -10,11 +10,9 @@ import { Team } from '../../models/team.model';
   styleUrl: './team-card.scss',
 })
 export class TeamCard {
-  @Input() team!: Team;
+  @Input () team?: any; // just "any" for now
 
-  @Output() simulate = new EventEmitter<Team>();
-
-  onSimulate() {
-    this.simulate.emit(this.team);
-  }
+onSimulate() {
+  console.log('Boton click')
+}
 }

@@ -24,8 +24,8 @@ export class SimulatorService {
 
     return {
       id: this.matchId++,
-      homeTeamId: home.id,
-      awayTeamId: away.id,
+      homeTeam: home.name,
+      awayTeam: away.id,
       homeGoals: score.home,
       awayGoals: score.away,
       playedAt: new Date().toISOString(),

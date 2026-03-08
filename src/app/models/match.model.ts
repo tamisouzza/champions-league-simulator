@@ -1,8 +1,8 @@
 export interface Match {
-    id: number; 
-    homeTeamId: number;
-    awayTeamId: number;
-    homeGoals: number;
-    awayGoals: number;
-    playedAt: string;
+  id: number;
+  homeTeam: any;
+  awayTeam: any;
+  homeGoals: any;
+  awayGoals: number;
+  playedAt: any;
 }
