@@ -1,0 +1,92 @@
+<div class="dashboard-container">
+  
+  <header class="app-header">
+    <div class="user-info">
+      <div class="profile-pic">
+        <span class="avatar-circle">
+          {{ userName ? userName.substring(0, 2).toUpperCase() : 'GU' }}
+        </span>
+      </div>
+      <div class="welcome-text">
+        <p>Welcome back!</p>
+        <h2>{{ userName || 'Guest' }}</h2>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="menu-btn">☰</button>
+    </div>
+  </header>
+
+  <div class="search-section">
+    <input type="search" placeholder="Search by events...">
+    <div class="controls-icons">
+      <span>☩</span>
+    </div>
+  </div>
+
+  <section class="simulation-area">
+    <button class="simulate-button" (click)="simulateAllTies()">
+      Run Simulation 
+    </button>
+  </section>
+  
+  <nav class="category-tabs">
+    <span class="tab active">Upcoming</span> 
+    <span class="tab">Ongoing</span> 
+    <span class="tab">Completed</span> 
+  </nav>
+
+  <main class="games-container">
+    
+    <div class="category-header">
+      <h2>Champions League</h2>
+      <span class="subtitle">Play-offs</span>
+    </div>
+
+    @for (tie of knockoutTies; track tie.id) {
+      <div class="tie-card">
+        
+        <div class="match-meta">
+          <h3>Match : 0{{ tie.id }}</h3>
+          <span class="star-icon">☆</span>
+        </div>
+
+        <div class="tie-content">
+          
+          <div class="team-block">
+            <div class="team-logo">
+              <span class="placeholder-sigla">{{ getInitials(tie.leg1.homeTeam) }}</span>
+              <img [src]="tie.leg1.homeTeamLogo" [alt]="tie.leg1.homeTeam" class="logo-img">
+            </div>
+            <p class="team-name">{{ tie.leg1.homeTeam }}</p>
+          </div>
+
+          <div class="score-block">
+            <div class="aggregate-display">
+              {{ getAggregate(tie).scoreA }} : {{ getAggregate(tie).scoreB }}
+            </div>
+            
+            <div class="detailed-legs">
+              <p>Leg 1: {{ tie.leg1.homeScore }}:{{ tie.leg1.awayScore }}</p>
+              <p>Leg 2: {{ tie.leg2.homeScore }}:{{ tie.leg2.awayScore }}</p>
+            </div>
+          </div>
+
+          <div class="team-block">
+            <div class="team-logo">
+              <span class="placeholder-sigla">{{ getInitials(tie.leg1.awayTeam) }}</span>
+              <img [src]="tie.leg1.awayTeamLogo" [alt]="tie.leg1.awayTeam" class="logo-img">
+            </div>
+            <p class="team-name">{{ tie.leg1.awayTeam }}</p>
+          </div>
+
+        </div>
+      </div>
+    } @empty {
+      <div class="empty-state">
+        <p>No matches scheduled yet.</p>
+      </div>
+    }
+
+  </main>
+</div>

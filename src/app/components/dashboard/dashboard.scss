@@ -1,0 +1,210 @@
+$bg-app: #050a14;     
+$card-bg: #111a2d;   
+$card-hover: #162238;   
+$accent-green: #00ff88; 
+$text-main: #ffffff;     
+$text-muted: #64748b;    
+$border-color: #1e293b;  
+
+:host {
+  display: block;
+  background-color: $bg-app;
+  color: $text-main;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif; 
+  padding: 20px;
+}
+
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .avatar-circle {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, $accent-green, #00b3ff);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .welcome-text {
+      p { margin: 0; font-size: 11px; color: $text-muted; text-transform: uppercase; letter-spacing: 1px; }
+      h2 { margin: 0; font-size: 18px; font-weight: 600; }
+    }
+  }
+
+  .menu-btn {
+    background: none;
+    border: none;
+    color: $text-main;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+
+.search-section {
+  display: flex;
+  background-color: $card-bg;
+  border-radius: 12px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  align-items: center;
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: $text-main;
+    outline: none;
+    &::placeholder { color: $text-muted; }
+  }
+
+  .controls-icons { color: $text-muted; display: flex; gap: 10px; }
+}
+
+.simulate-button {
+  width: 100%;
+  background-color: $accent-green;
+  color: #050a14;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: transform 0.1s;
+
+  &:active { transform: scale(0.98); }
+}
+
+
+.category-tabs {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid $border-color;
+
+  .tab {
+    padding-bottom: 12px;
+    font-size: 14px;
+    color: $text-muted;
+    cursor: pointer;
+    position: relative;
+
+    &.active {
+      color: $text-main;
+      font-weight: 600;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $accent-green;
+      }
+    }
+  }
+}
+
+
+.category-header {
+  margin-bottom: 20px;
+  h2 { font-size: 16px; margin: 0; display: inline-block; }
+  .subtitle { font-size: 12px; color: $text-muted; margin-left: 10px; }
+}
+
+.tie-card {
+  background-color: $card-bg;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid $border-color;
+  transition: background 0.3s;
+
+  &:hover { background-color: $card-hover; }
+
+  .match-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    h3 { font-size: 11px; color: $text-muted; margin: 0; text-transform: uppercase; }
+    .star-icon { color: $text-muted; }
+  }
+
+  .tie-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .team-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .team-logo {
+      width: 55px;
+      height: 55px;
+      background-color: #1e293b;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: $text-muted;
+      border: 2px solid $card-bg;
+    }
+    .logo-img {
+    max-width: 85%;  
+    max-height: 85%;
+    object-fit: contain;
+    }
+
+    .team-name {
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .score-block {
+    text-align: center;
+    min-width: 80px;
+
+    .aggregate-display {
+      font-size: 28px;
+      font-weight: 800;
+      color: $text-main;
+      margin-bottom: 4px;
+      letter-spacing: 2px;
+    }
+
+    .detailed-legs {
+      font-size: 10px;
+      color: $accent-green;
+      p { margin: 2px 0; font-weight: 600; opacity: 0.8; }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login';
-import { SimulatorService} from './services/simulator';
+import { Dashboard } from './components/dashboard/dashboard';
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: SimulatorService},
+  { path: 'dashboard', component: Dashboard},
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
